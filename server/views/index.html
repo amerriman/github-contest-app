@@ -7,7 +7,7 @@
 
   <div class="container">
 <!-- This /vote is where the page will be rendered?  see index.js as well?-->
-    <form action="/vote" method="post">
+    <form action="/index" method="post">
       <div class="form-group">
         <label>GitHub Name</label>
         <input type="text" class="form-control" id="githubName" placeholder="GitHub Name" name="name">
@@ -25,9 +25,22 @@
         <input type="file" id="githubImage" name="img">
         <p class="help-block">Upload your GitHub Image here.</p>
       </div> -->
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default">Add Submission</button>
     </form>
 
+  </div>
+  <div class = container>
+    <p>{{ message }}</p>
+  </div>
+
+  <div class="container">
+    <h2>There are currently {{ numberOfUsers }} ready to compete!</h2>
+  </div>
+
+  <div class="container">
+    <form action="/vote" method="post">
+      <button type="submit" class="btn btn-default">Compete!</button>
+    </form>
   </div>
 
 {% endblock %}

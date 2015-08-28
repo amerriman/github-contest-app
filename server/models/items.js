@@ -1,3 +1,4 @@
+//set a unique id for each user here
 function Submissions(){
   this.submitArray = [];
 }
@@ -6,7 +7,9 @@ Submissions.prototype.addSubmission = function(githubName, githubURL, githubImag
   var newSubmission = {
     githubName: githubName,
     githubURL: githubURL,
-    githubImage:githubImage
+    githubImage:githubImage,
+    id: githubName,
+    votes: 0
   };
   this.submitArray.push(newSubmission);
 };

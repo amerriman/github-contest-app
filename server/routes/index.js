@@ -10,19 +10,26 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/vote', function(req, res){
+router.post('/index', function(req, res){
   if (submits.submitArray.length===8){
-    res.json(
-      { message: "No more entries allowed",
-      itemList: stubmits.submitArray
+    res.render('index',
+      { message: 'No more entries allowed',
+        // submitsArray: submitsArray
     });
   } else {
   var newSubmission = submits.addSubmission(req.body.name, req.body.url, req.body.img);
-   //!!!!!No slash on vote!  It's knows its the html page!  AARARRRGGHHH!!!!
-   res.render('vote',
-    { submitsArray: submitsArray
+   //!!!!!No slash on index!  It's knows its the html page!  AARARRRGGHHH!!!!
+    res.render('index', {
+      numberOfUsers: "test"
     });
   }
+});
+
+router.post('/vote', function(req, res){
+  //if(submits.submitArray[i] % 2)
+  res.render('vote',
+    { submitsArray: submitsArray
+    });
 });
 
 

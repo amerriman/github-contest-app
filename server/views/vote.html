@@ -6,29 +6,56 @@
 {% block content %}
 
   <div class="container">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>VOTE</th>
-          <th>GH Name</th>
-          <th>GH URL</th>
-          <th>Gh Image</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for item in submitsArray %}
-        <tr>
-          <td></td>
-          <td>{{ item.githubName }}</td>
-          <td>{{ item.githubURL }}</td>
-          <td>{{ item.githubImage }}</td>
-        </tr>
 
-        {% endfor %}
+    <div class="row col-md-5">
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>VOTE</th>
+              <th>GH Name</th>
+              <th>GH URL</th>
+              <th>Gh Image</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for item in submitsArray %}
+            <tr>
+              <td><button type="vote" class="btn btn-default" name="{{ item.id }}">Vote!</button></td>
+              <td>{{ item.githubName }}</td>
+              <td>{{ item.githubURL }}</td>
+              <td>{{ item.githubImage }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      </tbody>
-
-    </table>
+    <div class="row col-md-5 col-md-offset-2">
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>VOTE</th>
+              <th>GH Name</th>
+              <th>GH URL</th>
+              <th>Gh Image</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for item in submitsArray %}
+            <tr>
+              <td><button type="vote" class="btn btn-default">Vote!</button></td>
+              <td>{{ item.githubName }}</td>
+              <td>{{ item.githubURL }}</td>
+              <td>{{ item.githubImage }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
 
   </div>
 
