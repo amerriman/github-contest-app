@@ -6,9 +6,27 @@
 {% block content %}
 
   <div class="container">
-
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+<!-- This /vote is where the page will be rendered?  see index.js as well?-->
+    <form action="/vote" method="post">
+      <div class="form-group">
+        <label>GitHub Name</label>
+        <input type="text" class="form-control" id="githubName" placeholder="GitHub Name" name="name">
+      </div>
+      <div class="form-group">
+        <label>GitHub URL</label>
+        <input type="text" class="form-control" id="githubURL" placeholder="GitHub URL" name="url">
+      </div>
+      <div class="form-group">
+        <label>GitHub URL</label>
+        <input type="txt" class="form-control" id="githubImage" placeholder="GitHub Image" name="img">
+      </div>
+      <!-- <div class="form-group">
+        <label for="githubImage">GitHub Image</label>
+        <input type="file" id="githubImage" name="img">
+        <p class="help-block">Upload your GitHub Image here.</p>
+      </div> -->
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 
   </div>
 
