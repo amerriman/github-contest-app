@@ -22,8 +22,10 @@
           <tbody>
           {% for contestant in contestantsA %}
             <tr>
-              <td><button type="submit" class="btn btn-default" name="{{ contestant.id }}">Vote!</button></td>
-              <td>{{  }}</td>
+              <form action="/vote/{{ contestant.id }}" method="post">
+                <td><button type="submit" class="btn btn-success" id="{{ contestant.id }}" name="{{ contestant.id }}">Vote!</button></td>
+              </form>
+              <td>{{ contestant.votes }}</td>
               <td>{{ contestant.githubName }}</td>
               <td>{{ contestant.githubURL }}</td>
               <td>{{ contestant.githubImage }}</td>
@@ -49,8 +51,10 @@
           <tbody>
           {% for contestant in contestantsB %}
             <tr>
-              <td><button type="submit" class="btn btn-default" name="{{ contestant.id }}">Vote!</button></td>
-              <td>{{  }}</td>
+              <form action="/vote/{{ contestant.id }}" method="post">
+                <td><button type="submit" class="btn btn-success" id="{{ contestant.id }}" name="{{ contestant.id }}">Vote!</button></td>
+              </form>
+              <td>{{ contestant.votes }}</td>
               <td>{{ contestant.githubName }}</td>
               <td>{{ contestant.githubURL }}</td>
               <td>{{ contestant.githubImage }}</td>
@@ -64,3 +68,6 @@
   </div>
 
 {% endblock %}
+
+
+

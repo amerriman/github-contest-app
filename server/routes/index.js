@@ -1,25 +1,26 @@
 var express = require('express');
 var router = express.Router();
-var submits = require('../models/items');
+var models = require('../models/items');
 var logic = require('../utilities/logic');
 
 var numUsers = 0;
 
-var submitsArray = submits.submitArray;
+var submitsArray = models.submitsArray;
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Github Contest' });
 });
 
 
-router.post('/index', function(req, res){
-  if (submits.submitArray.length===8){
+router.post('/createSub', function(req, res){
+  if (submitsArray.length===8){
     res.render('index',
       { message: 'No more entries allowed',
         // submitsArray: submitsArray
     });
   } else {
-  var newSubmission = submits.addSubmission(req.body.name, req.body.url, req.body.img);
+    var newEntry = new models.Submission(req.body.name, req.body.url, req.body.img);
+    submitsArray.push(newEntry);
     numUsers += 1;
    //!!!!!No slash on index!  It's knows its the html page!  AARARRRGGHHH!!!!
     res.render('index', {
@@ -29,10 +30,10 @@ router.post('/index', function(req, res){
   }
 });
 
-//go the the votes page to see the submissions and vote on them
-router.post('/vote', function(req, res){
-  var contestantsA = [];
-  var contestantsB = [];
+var contestantsA = [];
+var contestantsB = [];
+//when user clicks the button with the /begin action, go the the votes page to see the submissions and vote on them
+router.post('/begin', function(req, res){
   for (var i = 0; i < submitsArray.length; i++) {
     if (i % 2 === 0){
       contestantsA.push(submitsArray[i]);
@@ -45,6 +46,23 @@ router.post('/vote', function(req, res){
     { contestantsA: contestantsA,
       contestantsB: contestantsB
     });
+});
+
+
+router.post('/vote/:id', function(req, res){
+  //This is able to grab the id.
+  console.log(req.params, "req.params");
+  for (var i = 0; i < contestantsA.length; i++) {
+    if(contestantsA[i].id === req.params.id){
+      console.log("I'm in A");
+    } else {
+      for (var i = 0; i < contestantsB.length; i++) {
+        if(contestantsB[i].id === req.params.id){
+          console.log("I'm in B");
+        }
+      }
+    }
+  }
 });
 
 
