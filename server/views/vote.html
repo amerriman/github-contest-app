@@ -13,18 +13,20 @@
           <thead>
             <tr>
               <th>VOTE</th>
+              <th>Vote Tally</th>
               <th>GH Name</th>
               <th>GH URL</th>
               <th>Gh Image</th>
             </tr>
           </thead>
           <tbody>
-          {% for item in submitsArray %}
+          {% for contestant in contestantsA %}
             <tr>
-              <td><button type="vote" class="btn btn-default" name="{{ item.id }}">Vote!</button></td>
-              <td>{{ item.githubName }}</td>
-              <td>{{ item.githubURL }}</td>
-              <td>{{ item.githubImage }}</td>
+              <td><button type="submit" class="btn btn-default" name="{{ contestant.id }}">Vote!</button></td>
+              <td>{{  }}</td>
+              <td>{{ contestant.githubName }}</td>
+              <td>{{ contestant.githubURL }}</td>
+              <td>{{ contestant.githubImage }}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -38,18 +40,20 @@
           <thead>
             <tr>
               <th>VOTE</th>
+              <th>Vote Tally</th>
               <th>GH Name</th>
               <th>GH URL</th>
               <th>Gh Image</th>
             </tr>
           </thead>
           <tbody>
-          {% for item in submitsArray %}
+          {% for contestant in contestantsB %}
             <tr>
-              <td><button type="vote" class="btn btn-default" name="{{ item.id }}">Vote!</button></td>
-              <td>{{ item.githubName }}</td>
-              <td>{{ item.githubURL }}</td>
-              <td>{{ item.githubImage }}</td>
+              <td><button type="submit" class="btn btn-default" name="{{ contestant.id }}">Vote!</button></td>
+              <td>{{  }}</td>
+              <td>{{ contestant.githubName }}</td>
+              <td>{{ contestant.githubURL }}</td>
+              <td>{{ contestant.githubImage }}</td>
             </tr>
             {% endfor %}
           </tbody>
