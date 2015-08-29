@@ -46,7 +46,7 @@
           <tbody>
           {% for item in submitsArray %}
             <tr>
-              <td><button type="vote" class="btn btn-default">Vote!</button></td>
+              <td><button type="vote" class="btn btn-default" name="{{ item.id }}">Vote!</button></td>
               <td>{{ item.githubName }}</td>
               <td>{{ item.githubURL }}</td>
               <td>{{ item.githubImage }}</td>

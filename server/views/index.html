@@ -10,14 +10,14 @@
     <form action="/index" method="post">
       <div class="form-group">
         <label>GitHub Name</label>
-        <input type="text" class="form-control" id="githubName" placeholder="GitHub Name" name="name">
+        <input type="text" class="form-control" id="githubName" placeholder="GitHub Name" name="name" required>
       </div>
       <div class="form-group">
         <label>GitHub URL</label>
-        <input type="text" class="form-control" id="githubURL" placeholder="GitHub URL" name="url">
+        <input type="text" class="form-control" id="githubURL" placeholder="GitHub URL" name="url" required>
       </div>
       <div class="form-group">
-        <label>GitHub URL</label>
+        <label>GitHub IMG</label>
         <input type="txt" class="form-control" id="githubImage" placeholder="GitHub Image" name="img">
       </div>
       <!-- <div class="form-group">
@@ -34,7 +34,7 @@
   </div>
 
   <div class="container">
-    <h2>There are currently {{ numberOfUsers }} ready to compete!</h2>
+    <h2>There are currently {{ numUsers }} ready to compete!</h2>
   </div>
 
   <div class="container">

@@ -8,7 +8,7 @@ Submissions.prototype.addSubmission = function(githubName, githubURL, githubImag
     githubName: githubName,
     githubURL: githubURL,
     githubImage:githubImage,
-    id: githubName,
+    id: githubURL,
     votes: 0
   };
   this.submitArray.push(newSubmission);
