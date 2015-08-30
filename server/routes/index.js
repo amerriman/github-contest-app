@@ -48,23 +48,34 @@ router.post('/begin', function(req, res){
     });
 });
 
-
-router.post('/vote/:id', function(req, res){
+//increments votes for the A side
+router.post('/voteA/:id', function(req, res){
   //This is able to grab the id.
   console.log(req.params, "req.params");
   for (var i = 0; i < contestantsA.length; i++) {
-    if(contestantsA[i].id === req.params.id){
-      console.log("I'm in A");
+    if(contestantsA[i].id === req.params.id) {
+      console.log(contestantsA[i].votes, "pre-add");
+      console.log(contestantsA[i].votes += 1, "postadd");
     } else {
-      for (var i = 0; i < contestantsB.length; i++) {
-        if(contestantsB[i].id === req.params.id){
-          console.log("I'm in B");
-        }
-      }
+      console.log("epic boo");
     }
   }
 });
 
+
+//increments votes for the B side
+router.post('/voteB/:id', function(req, res){
+  //This is able to grab the id.
+  console.log(req.params, "req.params");
+  for (var i = 0; i < contestantsB.length; i++) {
+    if(contestantsB[i].id === req.params.id) {
+      console.log(contestantsB[i].votes, "pre-add");
+      console.log(contestantsB[i].votes += 1, "postadd");
+    } else {
+      console.log("epic boo");
+    }
+  }
+});
 
 
 module.exports = router;

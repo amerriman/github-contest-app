@@ -22,7 +22,7 @@
           <tbody>
           {% for contestant in contestantsA %}
             <tr>
-              <form action="/vote/{{ contestant.id }}" method="post">
+              <form action="/voteA/{{ contestant.id }}" method="post">
                 <td><button type="submit" class="btn btn-success" id="{{ contestant.id }}" name="{{ contestant.id }}">Vote!</button></td>
               </form>
               <td>{{ contestant.votes }}</td>
@@ -51,7 +51,7 @@
           <tbody>
           {% for contestant in contestantsB %}
             <tr>
-              <form action="/vote/{{ contestant.id }}" method="post">
+              <form action="/voteB/{{ contestant.id }}" method="post">
                 <td><button type="submit" class="btn btn-success" id="{{ contestant.id }}" name="{{ contestant.id }}">Vote!</button></td>
               </form>
               <td>{{ contestant.votes }}</td>
